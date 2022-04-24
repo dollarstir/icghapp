@@ -31,9 +31,9 @@ $router = new Router([
     ),
 
     new Route(
-        '/',
+        '/myrate',
         function ($context) {
-            return Viewer::view('install.php', $context);
+            return Viewer::view('main/myrate.php', $context);
         }
     ),
 
