@@ -26,7 +26,7 @@ $router = new Router([
     new Route(
         '/addratings',
         function ($context) {
-            return Viewer::view('install.php', $context);
+            return Viewer::view('main/addrate.php', $context);
         }
     ),
 
