@@ -38,9 +38,9 @@ $router = new Router([
     ),
 
     new Route(
-        '/',
+        '/bookings',
         function ($context) {
-            return Viewer::view('install.php', $context);
+            return Viewer::view('main/bookings.php', $context);
         }
     ),
 
