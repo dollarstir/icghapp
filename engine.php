@@ -17,9 +17,9 @@ $router = new Router([
     ),
 
     new Route(
-        '/',
+        '/ncount',
         function ($context) {
-            return Viewer::view('install.php', $context);
+            return Viewer::view('main/ncount.php', $context);
         }
     ),
 
