@@ -45,16 +45,16 @@ $router = new Router([
     ),
 
     new Route(
-        '/',
+        '/user',
         function ($context) {
-            return Viewer::view('install.php', $context);
+            return Viewer::view('main/user.php', $context);
         }
     ),
 
     new Route(
-        '/',
+        '/ptest',
         function ($context) {
-            return Viewer::view('install.php', $context);
+            return Viewer::view('main/ptest.php', $context);
         }
     ),
 
