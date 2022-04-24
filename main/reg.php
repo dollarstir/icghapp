@@ -1,7 +1,7 @@
 <?php
 
-involve('adapter');
- involve('send');
+include 'fragement/adapter.php';
+include 'fragement/send.php';
 
 $datejoined = date('jS F, Y');
 extract($_POST);

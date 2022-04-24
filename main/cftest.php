@@ -1,6 +1,7 @@
 <?php
 
-involve('adapter');
+include 'fragement/adapter.php';
+include 'fragement/send.php';
 extract($_POST);
 
 $id = mysqli_real_escape_string($conn, $_POST['id']);

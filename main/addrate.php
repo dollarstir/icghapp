@@ -1,6 +1,6 @@
 <?php
 
-involve('adapter');
+include 'fragement/adapter.php';
 
 extract($_POST);
 

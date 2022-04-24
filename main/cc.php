@@ -1,6 +1,7 @@
 
 <?php
-    involve('adapter');
+  include 'fragement/adapter.php';
+  include 'fragement/send.php';
         $sql = "SELECT * FROM counsellors WHERE status ='available' ORDER BY  rand()";
 
     $result = $conn->query($sql);

@@ -1,7 +1,8 @@
 
 <?php
 
-involve('adapter');
+include 'fragement/adapter.php';
+include 'fragement/send.php';
 extract($_POST);
 
     $sql = 'SELECT * FROM tupsu  ORDER BY RAND() LIMIT 5';

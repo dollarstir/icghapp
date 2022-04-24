@@ -1,7 +1,7 @@
 <?php
 
-involve('adapter');
-involve('send');
+include 'fragement/adapter.php';
+include 'fragement/send.php';
 
  extract($_POST);
 

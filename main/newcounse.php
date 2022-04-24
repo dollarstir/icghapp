@@ -45,8 +45,8 @@
 
 
 <?php
-
-involve('adapter');
+include 'fragement/adapter.php';
+include 'fragement/send.php';
 // $return["error"] = false;
 // $return["msg"] = "";
 // $return["success"] = false;
