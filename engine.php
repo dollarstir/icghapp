@@ -24,7 +24,7 @@ $router = new Router([
     ),
 
     new Route(
-        '/',
+        '/addratings',
         function ($context) {
             return Viewer::view('install.php', $context);
         }
