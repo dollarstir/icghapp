@@ -6,7 +6,7 @@ $username = mysqli_real_escape_string($conn, $_POST['username']);
 $password = mysqli_real_escape_string($conn, $_POST['password']);
 $password = md5($password);
 
-$get = mysqli_query($conn, "SELECT * FROM utable WHERE email='$username' AND  passcode = '$password' AND status ='active' ");
+$get = mysqli_query($conn, "SELECT * FROM utable WHERE email='$username' OR contact='$username' AND  passcode = '$password' AND status ='active' ");
 
 $checks = mysqli_num_rows($get);
 if ($checks == 1) {
