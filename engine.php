@@ -197,5 +197,12 @@ $router = new Router([
             return Viewer::view('install.php', $context);
         }
     ),
+
+    new Route(
+        '/groups',
+        function ($context) {
+            return Viewer::view('main/groups.php', $context);
+        }
+    ),
 ]);
 $router->launch();
