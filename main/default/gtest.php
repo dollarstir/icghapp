@@ -292,7 +292,7 @@ include 'driver.php';
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
-                                                                    <?php ptest(); ?>   
+                                                                    <?php gtest(); ?>   
                                                                     
                                                                 </tbody>
                                                                 <tfoot>
