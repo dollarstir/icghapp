@@ -12,7 +12,7 @@ function tbar()
     <div class="navbar-wrapper">
 
         <div class="navbar-logo">
-            <a class="mobile-menu" id="mobile-collapse" href="ready-suggestion-form.html#!">
+            <a class="mobile-menu" id="mobile-collapse" href="#!">
                 <i class="feather icon-menu"></i>
             </a>
             <a href="index.php">
