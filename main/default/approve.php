@@ -18,7 +18,7 @@ $cneed = $rc['ctype'];
 $uid = $rc2['id'];
 if ($up) {
     mysqli_query($conn, "INSERT INTO notification (uid,nmess,status) VALUES ('$uid','Your request for a Counsellor has been successful.','unread')");
-    $txt1 = 'Dear '.$uname.',            Your request for a Counsellor '.$cname.' has been successful. Kindly visit the iCounse-Gh App and Check Bookings to interact. ';
+    $txt1 = 'Dear '.$uname.', Your request for a Counsellor '.$cname.' has been successful. Kindly visit the iCounse-Gh App and Check Bookings to interact. ';
     $send8 = new send();
     $send8->key = 'y0i5w3vGnQi6M45azQACwS4vo';
     $send8->message = $txt1;
@@ -29,7 +29,7 @@ if ($up) {
 
     $ucont = $rc2['contact'];
 
-    $txtw = 'Dear '.$cname.',    You have been assigned to '.$uname.'. Contact : '.$ucont.', Counselling need : '.$cneed.' in the iCounsel-Gh App';
+    $txtw = 'Dear '.$cname.', You have been assigned to '.$uname.'. Contact : '.$ucont.', Counselling need : '.$cneed.' in the iCounsel-Gh App';
     $send9 = new send();
     $send9->key = 'y0i5w3vGnQi6M45azQACwS4vo';
     $send9->message = $txtw;
