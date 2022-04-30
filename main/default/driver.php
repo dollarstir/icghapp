@@ -673,6 +673,7 @@ function assigncounsellor($cid, $bid, $ctype)
     $up = mysqli_query($conn, "UPDATE bookings SET cid='$cid',cname='$cname',clocation='$clocation',status='$status',cpic='$cpic',ccontact = '$ccontact' WHERE id='$bid'");
     $ck = mysqli_query($conn, "SELECT * FROM bookings WHERE id= '$bid'");
     $rc = mysqli_fetch_array($ck);
+    $cneed = $rc['ctype'];
     $mid = $rc['userid'];
     $ck2 = mysqli_query($conn, "SELECT * FROM utable WHERE id= '$mid'");
     $rc2 = mysqli_fetch_array($ck2);
@@ -691,7 +692,9 @@ function assigncounsellor($cid, $bid, $ctype)
         $isError = true;
         $response8 = $send8->sendMessage();
 
-        $txtw = 'Dear '.$cname.',    You have been assigned to '.$uname.' in the iCounsel-Gh App';
+        $ucont = $rc2['contact'];
+
+        $txtw = 'Dear '.$cname.',    You have been assigned to '.$uname.'. Contact  : '.$ucont.', Counselling need : '.$cneed.' in the iCounsel-Gh App';
         $send9 = new send();
         $send9->key = 'y0i5w3vGnQi6M45azQACwS4vo';
         $send9->message = $txtw;
