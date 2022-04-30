@@ -471,7 +471,7 @@ function sidebar()
             <li class=" ">
                 <a href="gtest.php">
                     <span class="pcoded-micon"><i class="feather icon-feather"></i></span>
-                    <span class="pcoded-mtext">Anonymous group Request</span>
+                    <span class="pcoded-mtext">Whatsapp group Request</span>
                 </a>
             </li>
             
