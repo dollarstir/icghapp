@@ -682,7 +682,7 @@ function assigncounsellor($cid, $bid, $ctype)
         $ss = mysqli_query($conn, "SELECT * FROM bookings WHERE id='$bid'");
         $sss = mysqli_fetch_array($ss);
         $userid = $sss['userid'];
-        mysqli_query($conn, "INSERT INTO notification (uid,nmess,status) VALUES ('$userid','You have been assigned a counsellor navigate to activies to check.','unread')");
+        mysqli_query($conn, "INSERT INTO notification (uid,nmess,status) VALUES ('$userid','You have been assigned a counsellor navigate to Bookings to check.','unread')");
         $txt1 = 'Dear '.$uname.',    You have been assigned to Counsellor '.$cname.'. Kindly visit the iCounse-Gh App and Check Bookings to interact . ';
         $send8 = new send();
         $send8->key = 'y0i5w3vGnQi6M45azQACwS4vo';
