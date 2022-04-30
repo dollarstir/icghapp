@@ -264,17 +264,17 @@
                                                         <center><h5>Assign Counsellor To  Customer</h5></center>
                                                         <!-- <span>lorem ipsum dolor sit amet, consectetur adipisicing -->
                                                             <!-- elit</span> -->
-                                                        <?php 
+                                                        <?php
                                                         include 'db.php';
 
                                                         $bid = $_GET['id'];
-                                                        $cloc= $_GET['ctype'];
+                                                        $cloc = $_GET['ctype'];
 
-                                                        $get = mysqli_query($conn,"SELECT * FROM bookings WHERE id ='$bid'");
+                                                        $get = mysqli_query($conn, "SELECT * FROM bookings WHERE id ='$bid'");
                                                         $r = mysqli_fetch_array($get);
                                                         extract($r);
-                                                        
-                                                        ;?>
+
+                                                        ?>
                                                     </div>
                                                     <div class="card-block">
                                                         <div class="j-wrapper j-wrapper-640">
@@ -329,9 +329,9 @@
                                                                                 <i class="icofont icofont-globe"></i>
                                                                             </label>
                                                                             <input type="text" id="phone"
-                                                                                name="b" placeholder="Counsellor Location" value="<?php echo 'Booking No: #'.$bid;?>" readonly>
+                                                                                name="b" placeholder="Counsellor Location" value="<?php echo 'Booking No: #'.$bid; ?>" readonly>
 
-                                                                                <input type="hidden" id="phone" name="bid" placeholder="Counsellor Location" value="<?php echo $bid;?>">
+                                                                                <input type="hidden" id="phone" name="bid" placeholder="Counsellor Location" value="<?php echo $bid; ?>">
 
                                                                                 
                                                                         </div>
@@ -343,7 +343,7 @@
                                                                                 <i class="icofont icofont-map"></i>
                                                                             </label>
                                                                             <input type="text" id="phone"
-                                                                                name="ctype" placeholder="Counsellor Location" value="<?php echo $cloc;?>" readonly>
+                                                                                name="ctype" placeholder="Counsellor Location" value="<?php echo $cloc; ?>" readonly>
                                                                         </div>
                                                                     </div>
                                                                     <!-- end subject -->
@@ -353,21 +353,19 @@
                                                                             <select name="cid">
                                                                                 <option value="" selected>Choose Counsellor to Assign
                                                                                     </option>
-                                                                                <?php 
-                                                                                
-                                                                                $so = mysqli_query($conn,"SELECT * FROM counsellors WHERE type='$ctype'");
+                                                                                <?php
+
+                                                                                $so = mysqli_query($conn, "SELECT * FROM counsellors ");
                                                                                 $cc = mysqli_num_rows($so);
-                                                                                if($cc > 0){
-                                                                                    while($row = mysqli_fetch_array($so)){
+                                                                                if ($cc > 0) {
+                                                                                    while ($row = mysqli_fetch_array($so)) {
                                                                                         echo '<option value="'.$row['id'].'">'.$row['name'].'( '.$row['type'].')</option>';
                                                                                     }
-                                                                                }
-                                                                                else{
+                                                                                } else {
                                                                                     echo '<option value=""> Sorry no Counsellor available for this category</option>';
-
                                                                                 }
-                                                                                
-                                                                                ;?>
+
+                                                                                ?>
                                                                             </select>
                                                                             <i></i>
                                                                         </label>
