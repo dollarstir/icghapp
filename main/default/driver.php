@@ -5,11 +5,8 @@
 //email : kpin463@gmail.com
 
 function tbar()
-
-
-
 {
-    $name  = $_SESSION['name'];
+    $name = $_SESSION['name'];
     $pic = $_SESSION['pic'];
     echo '<nav class="navbar header-navbar pcoded-header">
     <div class="navbar-wrapper">
@@ -476,10 +473,9 @@ function sidebar()
 </nav>';
 }
 
-function addcounsellor($name, $email, $contact, $region, $type,$type2,$type3,$cgroup)
-           
+function addcounsellor($name, $email, $contact, $region, $type, $type2, $type3, $cgroup)
 {
-     $ttype = $type.','.$type2.','.$type3;
+    $ttype = $type.','.$type2.','.$type3;
     $fileinfo = pathinfo($_FILES['file_name']['name']);
     $newFilename = $fileinfo['filename'].'_'.time().'.'.$fileinfo['extension'];
     if (move_uploaded_file($_FILES['file_name']['tmp_name'], 'upload/'.$newFilename)) {
@@ -540,7 +536,6 @@ function admins()
     }
 }
 
-
 function users()
 {
     include 'db.php';
@@ -561,8 +556,6 @@ function users()
     }
 }
 
-
-
 function ptest()
 {
     include 'db.php';
@@ -580,19 +573,15 @@ function ptest()
         <td>'.$ru['dob'].'</td>
         <td>'.$ru['gender'].'</td>
         <td>'.$ru['state'].'</td>';
-        if($ra['status'] == "pending"){
+        if ($ra['status'] == 'pending') {
             echo '<td><a class="btn btn-secondary" href="idis.php?id='.$ra['id'].'&name='.$ru['name'].'">Approve</a></td>';
-        }
-        else{
+        } else {
             echo '<td><span class="btn btn-success">Approved</span></td>';
         }
-       
-        
-        
-    echo '</tr>';
+
+        echo '</tr>';
     }
 }
-
 
 function tupsu()
 {
@@ -624,16 +613,13 @@ function counsellors()
         <td>'.$ra['type'].'</td>
          <td>'.$ra['cgroup'].'</td>
         <td><img src="upload/'.$ra['pic'].'" style="width="70px" height="70px"/></td>';
-        if($ra['status']=="pending"){
+        if ($ra['status'] == 'pending') {
             echo '<td><a class="btn btn-primary" href="aprovecounsellor.php?id='.$ra['id'].'">Approve</a> | <a class="btn btn-danger" href="delcounsellor.php?id='.$ra['id'].'">Delete</a></td> ';
-        }
-        else{
+        } else {
             echo '<td><a class="btn btn-danger" href="delcounsellor.php?id='.$ra['id'].'">Delete</a></td> ';
-            
         }
-        
-        
-   echo ' </tr>';
+
+        echo ' </tr>';
     }
 }
 
@@ -685,154 +671,155 @@ function assigncounsellor($cid, $bid, $ctype)
     $status = 'approved';
 
     $up = mysqli_query($conn, "UPDATE bookings SET cid='$cid',cname='$cname',clocation='$clocation',status='$status',cpic='$cpic',ccontact = '$ccontact' WHERE id='$bid'");
-    $ck = mysqli_query($conn,"SELECT * FROM bookings WHERE id= '$bid'");
-$rc = mysqli_fetch_array($ck);
-$mid = $rc['userid'];
-$ck2 = mysqli_query($conn,"SELECT * FROM utable WHERE id= '$mid'");
-$rc2 = mysqli_fetch_array($ck2);
-$uname = $rc2['name'];
+    $ck = mysqli_query($conn, "SELECT * FROM bookings WHERE id= '$bid'");
+    $rc = mysqli_fetch_array($ck);
+    $mid = $rc['userid'];
+    $ck2 = mysqli_query($conn, "SELECT * FROM utable WHERE id= '$mid'");
+    $rc2 = mysqli_fetch_array($ck2);
+    $uname = $rc2['name'];
     if ($up) {
-        $ss = mysqli_query($conn,"SELECT * FROM bookings WHERE id='$bid'");
+        $ss = mysqli_query($conn, "SELECT * FROM bookings WHERE id='$bid'");
         $sss = mysqli_fetch_array($ss);
         $userid = $sss['userid'];
-        mysqli_query($conn,"INSERT INTO notification (uid,nmess,status) VALUES ('$userid','You have been assigned a counsellor navigate to activies to check.','unread')");
-        $txt1 = 'Dear '.$uname.',            You have been assigned a counsellor. Kindly visit the iCounse-Gh App for details. ';
-                                    $send8 = new send();
-                                    $send8->key = "y0i5w3vGnQi6M45azQACwS4vo";
-                                    $send8->message = $txt1;
-                                    $send8->numbers = $rc2['contact'];
-                                    $send8->sender = "iCounsel Gh";
-                                    $isError = true;
-                                    $response8 = $send8->sendMessage();
+        mysqli_query($conn, "INSERT INTO notification (uid,nmess,status) VALUES ('$userid','You have been assigned a counsellor navigate to activies to check.','unread')");
+        $txt1 = 'Dear '.$uname.',    You have been assigned a counsellor. Kindly visit the iCounse-Gh App for details. ';
+        $send8 = new send();
+        $send8->key = 'y0i5w3vGnQi6M45azQACwS4vo';
+        $send8->message = $txt1;
+        $send8->numbers = $rc2['contact'];
+        $send8->sender = 'iCounsel Gh';
+        $isError = true;
+        $response8 = $send8->sendMessage();
+
+        $txtw = 'Dear '.$cname.',    You have been assigned to '.$uname.' in the iCounsel-Gh App';
+        $send9 = new send();
+        $send9->key = 'y0i5w3vGnQi6M45azQACwS4vo';
+        $send9->message = $txtw;
+        $send9->numbers = $ccontact;
+        $send9->sender = 'iCounsel Gh';
+        $isError = true;
+        $response9 = $send9->sendMessage();
         echo 'counsassign';
     } else {
         echo 'failed to assign';
     }
 }
 
-
-function addtupsu($title){
+function addtupsu($title)
+{
     include 'db.php';
 
-
-    if(empty($_FILES['file_name']['name'])){
+    if (empty($_FILES['file_name']['name'])) {
         echo 'file cant be empty';
-    }
-    else{
+    } else {
         $fileinfo = pathinfo($_FILES['file_name']['name']);
         $newFilename = $fileinfo['filename'].'_'.time().'.'.$fileinfo['extension'];
         if (move_uploaded_file($_FILES['file_name']['tmp_name'], 'upload/'.$newFilename)) {
-        $pic = $newFilename;
+            $pic = $newFilename;
 
-        $sim = mysqli_query($conn, "INSERT  INTO tupsu (title,pic) VALUES ('$title','$pic')");
+            $sim = mysqli_query($conn, "INSERT  INTO tupsu (title,pic) VALUES ('$title','$pic')");
 
-            if($sim){
+            if ($sim) {
                 echo 'tupsuadded';
-            }
-
-            else{
+            } else {
                 echo 'failed to add tupsu';
             }
-        }
-        else{
+        } else {
             echo 'failed to upload image';
         }
     }
 }
 
-function login($email,$password){
+function login($email, $password)
+{
     include 'db.php';
     $password = md5($password);
 
-    $ch = mysqli_query($conn,"SELECT * FROM supper WHERE email ='$email' AND password='$password'");
+    $ch = mysqli_query($conn, "SELECT * FROM supper WHERE email ='$email' AND password='$password'");
     $row = mysqli_fetch_array($ch);
     $lg = mysqli_num_rows($ch);
-    if($lg >0){
+    if ($lg > 0) {
         session_start();
         $_SESSION['loggedin'] = true;
-        $_SESSION['id']= $row['id'];
-        $_SESSION['email']= $row['email'];
-        $_SESSION['name']= $row['name'];
-        $_SESSION['contact']= $row['contact'];
-        $_SESSION['pic']= $row['pic'];
+        $_SESSION['id'] = $row['id'];
+        $_SESSION['email'] = $row['email'];
+        $_SESSION['name'] = $row['name'];
+        $_SESSION['contact'] = $row['contact'];
+        $_SESSION['pic'] = $row['pic'];
 
         echo 'loginsuccess';
-
-
-    }
-    else{
+    } else {
         echo 'invalid credential please try again';
     }
 }
 
-
-function totalusers(){
+function totalusers()
+{
     include 'db.php';
-    $a = mysqli_query($conn,"SELECT * FROM utable");
+    $a = mysqli_query($conn, 'SELECT * FROM utable');
     $aa = mysqli_num_rows($a);
     echo $aa;
 }
 
-function totaladdmins(){
+function totaladdmins()
+{
     include 'db.php';
-    $a = mysqli_query($conn,"SELECT * FROM supper");
+    $a = mysqli_query($conn, 'SELECT * FROM supper');
     $aa = mysqli_num_rows($a);
     echo $aa;
 }
 
-function totalbookings(){
+function totalbookings()
+{
     include 'db.php';
-    $a = mysqli_query($conn,"SELECT * FROM bookings");
+    $a = mysqli_query($conn, 'SELECT * FROM bookings');
     $aa = mysqli_num_rows($a);
     echo $aa;
 }
 
-
-function totaltupsu(){
+function totaltupsu()
+{
     include 'db.php';
-    $a = mysqli_query($conn,"SELECT * FROM tupsu");
+    $a = mysqli_query($conn, 'SELECT * FROM tupsu');
     $aa = mysqli_num_rows($a);
     echo $aa;
 }
 
-
-function approvedbk(){
+function approvedbk()
+{
     include 'db.php';
-    $a = mysqli_query($conn,"SELECT * FROM bookings WHERE status='approved'");
+    $a = mysqli_query($conn, "SELECT * FROM bookings WHERE status='approved'");
     $aa = mysqli_num_rows($a);
     echo $aa;
 }
 
-function pendingbk(){
+function pendingbk()
+{
     include 'db.php';
-    $a = mysqli_query($conn,"SELECT * FROM bookings WHERE status='pending'");
+    $a = mysqli_query($conn, "SELECT * FROM bookings WHERE status='pending'");
     $aa = mysqli_num_rows($a);
     echo $aa;
 }
 
-function totalcounsellors(){
+function totalcounsellors()
+{
     include 'db.php';
-    $a = mysqli_query($conn,"SELECT * FROM counsellors");
+    $a = mysqli_query($conn, 'SELECT * FROM counsellors');
     $aa = mysqli_num_rows($a);
     echo $aa;
 }
 
+// idiscover me
 
-// idiscover me 
-
-function idiscover($pid,$token){
+function idiscover($pid, $token)
+{
     include 'db.php';
- 
-$del  = mysqli_query($conn,"UPDATE ptest SET token = '$token', status = 'approved' WHERE id = $pid");
 
-if($del){
-    echo 'dicosucc';
-}
+    $del = mysqli_query($conn, "UPDATE ptest SET token = '$token', status = 'approved' WHERE id = $pid");
 
-else{
-
-    echo 'Failed to update';
-
-}
-
+    if ($del) {
+        echo 'dicosucc';
+    } else {
+        echo 'Failed to update';
+    }
 }
