@@ -5,7 +5,7 @@ include 'fragement/send.php';
 extract($_POST);
 $id = mysqli_real_escape_string($conn, $_POST['id']);
 
-$check = mysqli_query($conn, "SELECT * FROM ptest WHERE uid='$id'");
+$check = mysqli_query($conn, "SELECT * FROM gp WHERE uid='$id'");
 
 $ro = mysqli_num_rows($check);
 $ru = mysqli_fetch_array($check);
@@ -17,12 +17,12 @@ if ($ro > 0) {
         echo json_encode('approved');
     }
 } else {
-    $is = mysqli_query($conn, "INSERT INTO ptest(uid,status,pcat) VALUES ('$id','pending','$pcat')");
+    $is = mysqli_query($conn, "INSERT INTO gp(uid,status,pcat) VALUES ('$id','pending','$pcat')");
     $c2 = mysqli_query($conn, "SELECT * FROM utable WHERE id = '$id'");
     $q1 = mysqli_fetch_array($c2);
     $uname = $q1['name'];
     if ($is) {
-        $txt2 = "New personality request ($pcat) from ".$uname.' Number - '.$q1['contact'].' (Icounsel-Gh)';
+        $txt2 = "New Anonymous Group request ($pcat) from ".$uname.' Number - '.$q1['contact'].' (Icounsel-Gh)';
         $send9 = new send();
         $send9->key = 'y0i5w3vGnQi6M45azQACwS4vo';
         $send9->message = $txt2;
