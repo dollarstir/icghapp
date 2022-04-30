@@ -355,7 +355,7 @@
                                                                                     </option>
                                                                                 <?php
 
-                                                                                $so = mysqli_query($conn, "SELECT * FROM counsellors ");
+                                                                                $so = mysqli_query($conn, 'SELECT * FROM counsellors ');
                                                                                 $cc = mysqli_num_rows($so);
                                                                                 if ($cc > 0) {
                                                                                     while ($row = mysqli_fetch_array($so)) {
@@ -368,6 +368,8 @@
                                                                                 ?>
                                                                             </select>
                                                                             <i></i>
+
+                                                                            
                                                                         </label>
                                                                     </div>
                                                                     <!-- end country -->
