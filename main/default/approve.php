@@ -14,6 +14,7 @@ $rc2 = mysqli_fetch_array($ck2);
 $uname = $rc2['name'];
 $cname = $rc = ['cname'];
 $ccontact = $rc['ccontact'];
+$cneed = $rc['ctype'];
 $uid = $rc2['id'];
 if ($up) {
     mysqli_query($conn, "INSERT INTO notification (uid,nmess,status) VALUES ('$uid','Your request for a Counsellor has been successful.','unread')");
@@ -26,7 +27,9 @@ if ($up) {
     $isError = true;
     $response8 = $send8->sendMessage();
 
-    $txtw = 'Dear '.$cname.',    You have been assigned to '.$uname.' in the iCounsel-Gh App';
+    $ucont = $rc2['contact'];
+
+    $txtw = 'Dear '.$cname.',    You have been assigned to '.$uname.'. Contact : '.$ucont.', Counselling need : '.$cneed.' in the iCounsel-Gh App';
     $send9 = new send();
     $send9->key = 'y0i5w3vGnQi6M45azQACwS4vo';
     $send9->message = $txtw;
