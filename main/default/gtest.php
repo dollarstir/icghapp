@@ -14,7 +14,7 @@ include 'driver.php';
 <html lang="en">
 
 <head>
-    <title>iCounsel Gh Personality Request</title>
+    <title>iCounsel Gh Anonymous Group</title>
     <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 10]>
@@ -272,7 +272,7 @@ include 'driver.php';
                                                 <!-- HTML5 Export Buttons table start -->
                                                 <div class="card">
                                                     <div class="card-header table-card-header">
-                                                        <center><h5>Pyschometric Request</h5></center>
+                                                        <center><h5>Anonymous Group</h5></center>
                                                     </div>
                                                     <div class="card-block">
                                                         <div class="dt-responsive table-responsive">

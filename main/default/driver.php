@@ -590,6 +590,33 @@ function ptest()
     }
 }
 
+function gtest()
+{
+    include 'db.php';
+
+    $ad = mysqli_query($conn, 'SELECT * FROM gp');
+    while ($ra = mysqli_fetch_array($ad)) {
+        $uid = $ra['uid'];
+        $su = mysqli_query($conn, "SELECT * FROM utable WHERE id = '$uid' ");
+        $ru = mysqli_fetch_array($su);
+        echo '<tr>
+        <td>'.$ru['name'].'</td>
+         <td>'.$ra['pcat'].'</td>
+        <td>'.$ru['email'].'</td>
+        <td>'.$ru['contact'].'</td>
+        <td>'.$ru['dob'].'</td>
+        <td>'.$ru['gender'].'</td>
+        <td>'.$ru['state'].'</td>';
+        if ($ra['status'] == 'pending') {
+            echo '<td><a class="btn btn-secondary" href="idis.php?id='.$ra['id'].'&name='.$ru['name'].'">Approve</a></td>';
+        } else {
+            echo '<td><span class="btn btn-success">Approved</span></td>';
+        }
+
+        echo '</tr>';
+    }
+}
+
 function tupsu()
 {
     include 'db.php';
