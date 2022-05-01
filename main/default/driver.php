@@ -6,6 +6,10 @@
 
 function tbar()
 {
+    include 'db.php';
+
+    $ss = mysqli_query($conn, 'SELECT * FROM notification');
+    $c = mysqli_num_rows($ss);
     $name = $_SESSION['name'];
     $pic = $_SESSION['pic'];
     echo '<nav class="navbar header-navbar pcoded-header">
@@ -47,7 +51,7 @@ function tbar()
                     <div class="dropdown-primary dropdown">
                         <div class="dropdown-toggle" data-toggle="dropdown">
                             <i class="feather icon-bell"></i>
-                            <span class="badge bg-c-pink mnotify">5</span>
+                            <span class="badge bg-c-pink mnotify">'.$c.'</span>
                         </div>
                         <ul class="show-notification notification-view dropdown-menu"
                             data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
