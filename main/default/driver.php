@@ -58,13 +58,7 @@ function tbar()
                             <li>
                                 <h6>Notifications</h6>
                                 <label class="label label-danger">New</label>
-                            </li>';
-
-    while ($rcd = mysqli_fetch_array($ss)) {
-        echo '<li>New '.$rcd['ctype'].' counselling request</li>';
-    }
-
-    echo ' <span class="notiresut">
+                            </li><span class="notiresut">
                             
                             </span>
                             <center><a class="btn btn-success" href="bookings.php">View All</a></center>
