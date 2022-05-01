@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     $(".mnotify").load('check.php');
     $(".notiresut").load('check1.php');
-    
+
 
     // swal({
     //     title: "Congrat's",
@@ -56,8 +56,8 @@ $(document).ready(function () {
                     }, 1000);
                 });
                 break;
-                
-                case "dicosucc":
+
+            case "dicosucc":
                 swal({
                     title: "Congrat's",
                     text: "Token assigned successfully",
@@ -79,6 +79,19 @@ $(document).ready(function () {
                 }, function () {
                     setTimeout(function () {
                         window.location = 'view-tupsu.php';
+                    }, 1000);
+                });
+                break;
+
+            case "adsadded":
+                swal({
+                    title: "Congrat's",
+                    text: "Ads successfuly added",
+                    type: "success",
+
+                }, function () {
+                    setTimeout(function () {
+                        window.location = 'view-ads.php';
                     }, 1000);
                 });
                 break;
@@ -184,6 +197,28 @@ $(document).ready(function () {
 
     })
 
+
+
+    // adding ads
+    $(".addads").submit(function (ev) {
+        ev.preventDefault();
+
+        var cform = {
+
+            url: "love.php?heart=addads",
+            type: "post",
+            data: new FormData(this),
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: rep
+
+        };
+
+        $.ajax(cform);
+
+    })
+
     // login here
 
     $(".login").submit(function (ev) {
@@ -204,9 +239,9 @@ $(document).ready(function () {
         $.ajax(cform);
 
     })
-    
-    
-     // idiscover me
+
+
+    // idiscover me
 
     $(".adisc").submit(function (ev) {
         ev.preventDefault();

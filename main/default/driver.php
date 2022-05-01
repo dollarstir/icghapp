@@ -788,6 +788,31 @@ function addtupsu($title)
     }
 }
 
+function addadds($title)
+{
+    include 'db.php';
+
+    if (empty($_FILES['file_name']['name'])) {
+        echo 'file cant be empty';
+    } else {
+        $fileinfo = pathinfo($_FILES['file_name']['name']);
+        $newFilename = $fileinfo['filename'].'_'.time().'.'.$fileinfo['extension'];
+        if (move_uploaded_file($_FILES['file_name']['tmp_name'], 'upload/'.$newFilename)) {
+            $pic = $newFilename;
+
+            $sim = mysqli_query($conn, "INSERT  INTO ads (title,pic) VALUES ('$title','$pic')");
+
+            if ($sim) {
+                echo 'adsadded';
+            } else {
+                echo 'failed to add ads';
+            }
+        } else {
+            echo 'failed to upload image';
+        }
+    }
+}
+
 function login($email, $password)
 {
     include 'db.php';
