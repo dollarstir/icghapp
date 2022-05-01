@@ -1,15 +1,12 @@
-<?php 
+<?php
 session_start();
 
-if(isset($_SESSION['loggedin'] ) && $_SESSION['loggedin'] == true){
-   
-}
-else{
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+} else {
     echo '<script> window.location="auth.php"</script>';
 }
 
 include 'driver.php';
-
 
 ?>
 <!DOCTYPE html>
@@ -334,6 +331,20 @@ include 'driver.php';
                                                                             </label>
                                                                             <input type="text" id="phone"
                                                                                 name="contact" placeholder="Phone number">
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- end subject -->
+
+
+
+                                                                     <!-- start subject -->
+                                                                     <div class="j-unit">
+                                                                        <div class="j-input">
+                                                                            <label class="j-icon-left" for="phone">
+                                                                                <i class="icofont icofont-phone"></i>
+                                                                            </label>
+                                                                            <input type="text" id="phone"
+                                                                                name="gpcpin" placeholder="GPC number">
                                                                         </div>
                                                                     </div>
                                                                     <!-- end subject -->
