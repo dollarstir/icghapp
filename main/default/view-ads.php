@@ -288,7 +288,7 @@ include 'driver.php';
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
-                                                                    <?php tupsu(); ?>      
+                                                                    <?php ads(); ?>      
                                                                     
                                                                 </tbody>
                                                                 <tfoot>
