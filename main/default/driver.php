@@ -501,7 +501,7 @@ function sidebar()
 </nav>';
 }
 
-function addcounsellor($name, $email, $contact, $region, $type, $type2, $type3, $cgroup)
+function addcounsellor($name, $email, $contact, $gpcpin, $region, $type, $type2, $type3, $cgroup)
 {
     $ttype = $type.','.$type2.','.$type3;
     $fileinfo = pathinfo($_FILES['file_name']['name']);
@@ -514,7 +514,7 @@ function addcounsellor($name, $email, $contact, $region, $type, $type2, $type3, 
         if ($r > 0) {
             echo ' Sorry counsellor already added';
         } else {
-            $in = mysqli_query($conn, "INSERT  INTO counsellors(name,email,contact,region,type,status,pic,cgroup) VALUES ('$name','$email','$contact','$region','$ttype','available','$pic','$cgroup')");
+            $in = mysqli_query($conn, "INSERT  INTO counsellors(name,email,contact,region,type,status,pic,cgroup,gpcpin) VALUES ('$name','$email','$contact','$region','$ttype','available','$pic','$cgroup','$gpcpin')");
             if ($in) {
                 echo 'counssuccess';
             } else {
