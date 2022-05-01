@@ -1,5 +1,6 @@
 <?php
 
+include 'db.php';
 $id = $_GET['id'];
 if (isset($id)) {
     $d = mysqli_query($conn, "UPDATE gp SET status ='approved' WHERE id ='$id' ");
