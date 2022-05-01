@@ -4,7 +4,7 @@
 include 'fragement/adapter.php';
 extract($_POST);
 
-    $sql = 'SELECT * FROM tupsu  ORDER BY Id DESC';
+    $sql = 'SELECT * FROM ads  ORDER BY Id DESC';
 
     $result = $conn->query($sql);
 
