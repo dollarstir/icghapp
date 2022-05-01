@@ -453,6 +453,27 @@ function sidebar()
                 </ul>
             </li>
 
+
+            <li class="pcoded-hasmenu">
+                <a href="javascript:void(0)">
+                    <span class="pcoded-micon"><i class="feather icon-clipboard"></i></span>
+                    <span class="pcoded-mtext">ADS</span>
+                </a>
+                <ul class="pcoded-submenu">
+                    <li class=" ">
+                        <a href="add-ads.php">
+                            <span class="pcoded-mtext">Add Ads</span>
+                        </a>
+                    </li>
+                    <li class=" ">
+                        <a href="view-ads.php">
+                            <span class="pcoded-mtext">View Ads</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </li>
+
            
             <li class=" ">
                 <a href="bookings.php">
