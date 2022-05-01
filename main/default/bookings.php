@@ -1,15 +1,12 @@
-<?php 
+<?php
 session_start();
 
-if(isset($_SESSION['loggedin'] ) && $_SESSION['loggedin'] == true){
-   
-}
-else{
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+} else {
     echo '<script> window.location="auth.php"</script>';
 }
 
 include 'driver.php';
-
 
 ?>
 
@@ -101,7 +98,7 @@ include 'driver.php';
         <div class="pcoded-container navbar-wrapper">
 
             <!-- tbar -->
-            <?php tbar();?>
+            <?php tbar(); ?>
             <!-- tbar -->
 
             <!-- Sidebar chat start -->
@@ -299,7 +296,7 @@ include 'driver.php';
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
-                                                                    <?php allbookings();?>   
+                                                                    <?php allbookings(); ?>   
                                                                     
                                                                 </tbody>
                                                                 <tfoot>
@@ -1035,6 +1032,8 @@ include 'driver.php';
     <script src="files/assets/js/vartical-layout.min.js"></script>
     <script src="files/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script type="text/javascript" src="files/assets/js/script.js"></script>
+
+    <script src="ajax.js"></script>
 </body>
 
 </html>
