@@ -8,7 +8,7 @@ function tbar()
 {
     include 'db.php';
 
-    $ss = mysqli_query($conn, 'SELECT * FROM notification');
+    $ss = mysqli_query($conn, 'SELECT * FROM notification ORDER BY id DESC LIMIT 4');
     $c = mysqli_num_rows($ss);
     $name = $_SESSION['name'];
     $pic = $_SESSION['pic'];
