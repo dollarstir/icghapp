@@ -25,7 +25,7 @@ if (isset($id)) {
 
     $group = $rc['pcat'];
     $uid = $rc2['id'];
-    if ($up) {
+    if ($d) {
         mysqli_query($conn, "INSERT INTO notification (uid,nmess,status) VALUES ('$uid','Your request to join '.$group.' group  has been successful.','unread')");
         $txt1 = 'Dear '.$uname.', Your request to join '.$group.' group has been successful. Thank you for using the iCounse-Gh App . ';
         $send8 = new send();
