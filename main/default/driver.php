@@ -629,7 +629,7 @@ function gtest()
         <td>'.$ru['gender'].'</td>
         <td>'.$ru['state'].'</td>';
         if ($ra['status'] == 'pending') {
-            echo '<td><a class="btn btn-secondary" href="idis.php?id='.$ra['id'].'&name='.$ru['name'].'">Approve</a></td>';
+            echo '<td><a class="btn btn-secondary" href="acceptgroup.php?id='.$ra['id'].'">Approve</a></td>';
         } else {
             echo '<td><span class="btn btn-success">Approved</span></td>';
         }
