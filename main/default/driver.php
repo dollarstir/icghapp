@@ -654,6 +654,22 @@ function tupsu()
     }
 }
 
+function ads()
+{
+    include 'db.php';
+
+    $ad = mysqli_query($conn, 'SELECT * FROM ads');
+    while ($ra = mysqli_fetch_array($ad)) {
+        echo '<tr>
+        <td>'.$ra['title'].'</td>
+        
+        <td><img src="upload/'.$ra['pic'].'" style="width="70px" height="70px"/></td>
+        <td><a class="btn btn-danger" href="delads.php?id='.$ra['id'].'">Delete</a></td>
+        
+    </tr>';
+    }
+}
+
 function counsellors()
 {
     include 'db.php';
