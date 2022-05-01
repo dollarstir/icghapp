@@ -242,7 +242,7 @@ include 'driver.php';
                                             <div class="col-lg-8">
                                                 <div class="page-header-title">
                                                     <div class="d-inline">
-                                                        <center><h4>Admin Registration</h4></center>
+                                                        <center><h4>New Ads</h4></center>
                                                         
                                                     </div>
                                                 </div>
@@ -271,13 +271,13 @@ include 'driver.php';
                                                 <!-- Ready suggestion card start -->
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <center><h5>Add New Tupsu</h5></center>
+                                                        <center><h5>Add New Ads</h5></center>
                                                        
 
                                                     </div>
                                                     <div class="card-block">
                                                         <div class="j-wrapper j-wrapper-640">
-                                                            <form class="j-pro adtus" id="j-pro">
+                                                            <form class="j-pro addads" id="j-pro">
                                                                 <!-- end /.header-->
                                                                 <div class="j-content">
                                                                     <!-- start name -->

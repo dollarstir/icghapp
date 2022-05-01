@@ -1,15 +1,12 @@
-<?php 
+<?php
 session_start();
 
-if(isset($_SESSION['loggedin'] ) && $_SESSION['loggedin'] == true){
-   
-}
-else{
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+} else {
     echo '<script> window.location="auth.php"</script>';
 }
 
 include 'driver.php';
-
 
 ?>
 <!DOCTYPE html>
@@ -245,7 +242,7 @@ include 'driver.php';
                                             <div class="col-lg-8">
                                                 <div class="page-header-title">
                                                     <div class="d-inline">
-                                                        <center><h4>Admin Registration</h4></center>
+                                                        <center><h4>New Tupsu</h4></center>
                                                         
                                                     </div>
                                                 </div>
