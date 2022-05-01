@@ -58,8 +58,13 @@ function tbar()
                             <li>
                                 <h6>Notifications</h6>
                                 <label class="label label-danger">New</label>
-                            </li>
-                            <span class="notiresut">
+                            </li>';
+
+    while ($rcd = mysqli_fetch_array($ss)) {
+        echo '<li>'.$rcd['nmess'].'</li>';
+    }
+
+    echo ' <span class="notiresut">
                             
                             </span>
                             <center><a class="btn btn-success" href="bookings.php">View All</a></center>
