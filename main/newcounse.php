@@ -54,7 +54,7 @@ include 'fragement/send.php';
 
 if (isset($_FILES['file'])) {
     //directory to upload file
-    $target_dir = 'default/upload/'; //create folder files/ to save file
+    $target_dir = 'main/default/upload/'; //create folder files/ to save file
     $filename = $_FILES['file']['name'];
     //name of file
     //$_FILES["file"]["size"] get the size of file
