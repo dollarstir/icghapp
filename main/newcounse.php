@@ -87,7 +87,7 @@ if (isset($_FILES['file'])) {
         if (move_uploaded_file($_FILES['file']['tmp_name'], $savefile)) {
             $inc = mysqli_query($conn, "INSERT INTO counsellors (name,email,contact,region,type,status,pic,cgroup,gpcpin) VALUES ('$name','$email','$contact','$region','$type','$status','$filename','$cgroup','$gpcpin')");
             if ($inc) {
-                $txt1 = 'Dear '.$name.',                                Your request to join iCounsel-Gh App has been duly logged.';
+                $txt1 = 'Dear '.$name.',                                Your request to join iCounsel-Gh App Counsellors has been duly logged.';
                 $send8 = new send();
                 $send8->key = 'y0i5w3vGnQi6M45azQACwS4vo';
                 $send8->message = $txt1;
