@@ -3,7 +3,7 @@
 
 include 'fragement/adapter.php';
 include 'fragement/send.php';
-extract($_POST);
+// extract($_POST);
 
     $sql = 'SELECT * FROM vcontrol';
 
