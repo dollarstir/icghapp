@@ -1,8 +1,11 @@
 
 <?php
-  include 'fragement/adapter.php';
-  include 'fragement/send.php';
-        $sql = "SELECT * FROM counsellors WHERE status ='available' ORDER BY rand()";
+
+include 'fragement/adapter.php';
+include 'fragement/send.php';
+extract($_POST);
+
+    $sql = 'SELECT * FROM vcontrol';
 
     $result = $conn->query($sql);
 
@@ -17,3 +20,5 @@ if ($result->num_rows > 0) {
 }
 echo $json;
 $conn->close();
+
+?>
