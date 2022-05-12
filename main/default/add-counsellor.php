@@ -348,6 +348,18 @@ include 'driver.php';
                                                                         </div>
                                                                     </div>
                                                                     <!-- end subject -->
+
+
+                                                                     <!-- start subject -->
+                                                                     <div class="j-unit">
+                                                                        <div class="j-input">
+                                                                            <label class="j-icon-left" for="users">
+                                                                                <i class="icofont icofont-phone"></i>
+                                                                            </label>
+                                                                            <textarea name="bio" placeholder="bio"></textarea>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- end subject -->
                                                                     
                                                                     <!-- start country -->
                                                                     <div class="j-unit">
