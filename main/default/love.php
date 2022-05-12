@@ -8,7 +8,7 @@ if (isset($_GET['heart'])) {
         if (empty($fname) || empty($lname) || empty($email) || empty($region) || empty($type) || empty($contact)) {
             echo 'all fields are required';
         } else {
-            addcounsellor($name, $email, $contact,$gpcpin, $region, $type, $type2, $type3, $cgroup);
+            addcounsellor($name, $email, $contact, $gpcpin, $region, $type, $type2, $type3, $cgroup, $bio);
         }
     }
 
