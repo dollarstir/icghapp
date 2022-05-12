@@ -354,9 +354,9 @@ include 'driver.php';
                                                                      <div class="j-unit">
                                                                         <div class="j-input">
                                                                             <label class="j-icon-left" for="users">
-                                                                                <i class="icofont icofont-phone"></i>
+                                                                                <i class="icofont icofont-user"></i>
                                                                             </label>
-                                                                            <textarea name="bio" placeholder="bio"></textarea>
+                                                                            <textarea name="bio" placeholder="bio" id="users"></textarea>
                                                                         </div>
                                                                     </div>
                                                                     <!-- end subject -->
