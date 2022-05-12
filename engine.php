@@ -129,6 +129,13 @@ $router = new Router([
     ),
 
     new Route(
+        '/version',
+        function ($context) {
+            return Viewer::view('main/version.php', $context);
+        }
+    ),
+
+    new Route(
         '/changepass',
         function ($context) {
             return Viewer::view('main/changepass.php', $context);
