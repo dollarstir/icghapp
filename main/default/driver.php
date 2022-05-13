@@ -714,10 +714,12 @@ function counsellors()
 
     $ad = mysqli_query($conn, 'SELECT * FROM counsellors');
     while ($ra = mysqli_fetch_array($ad)) {
+        $count = countclients($ra['id']);
         echo '<tr>
         <td>'.$ra['name'].'</td>
         <td>'.$ra['email'].'</td>
         <td>'.$ra['contact'].'</td>
+        <td>'.$count.'</td>
         <td>'.$ra['gpcpin'].'</td>
         <td>'.$ra['region'].'</td>
         <td>'.$ra['type'].'</td>
@@ -739,10 +741,12 @@ function pendingcounsellors()
 
     $ad = mysqli_query($conn, 'SELECT * FROM counsellors WHERE status ="pending"');
     while ($ra = mysqli_fetch_array($ad)) {
+        $count = countclients($ra['id']);
         echo '<tr>
         <td>'.$ra['name'].'</td>
         <td>'.$ra['email'].'</td>
         <td>'.$ra['contact'].'</td>
+        <td>'.$count.'</td>
         <td>'.$ra['gpcpin'].'</td>
         <td>'.$ra['region'].'</td>
         <td>'.$ra['type'].'</td>
