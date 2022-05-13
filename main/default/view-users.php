@@ -275,7 +275,7 @@ include 'driver.php';
                                                 <!-- HTML5 Export Buttons table start -->
                                                 <div class="card">
                                                     <div class="card-header table-card-header">
-                                                        <center><h5>ADMINS</h5></center>
+                                                        <center><h5>Users</h5></center>
                                                     </div>
                                                     <div class="card-block">
                                                         <div class="dt-responsive table-responsive">
