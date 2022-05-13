@@ -478,20 +478,36 @@ function sidebar()
             </li>
 
 
-            <li class=" ">
-                <a href="newbookings.php">
-                    <span class="pcoded-micon"><i class="feather icon-feather"></i></span>
-                    <span class="pcoded-mtext">New Bookings</span>
+
+
+            <li class="pcoded-hasmenu">
+                <a href="javascript:void(0)">
+                    <span class="pcoded-micon"><i class="feather icon-clipboard"></i></span>
+                    <span class="pcoded-mtext">Bookings</span>
                 </a>
+                <ul class="pcoded-submenu">
+                    <li class=" ">
+                        <a href="newbookings.php">
+                            <span class="pcoded-mtext">New Bookings</span>
+                        </a>
+                    </li>
+                    <li class=" ">
+                        <a href="approvedbookings.php">
+                            <span class="pcoded-mtext">Approved Bookings</span>
+                        </a>
+                    </li>
+
+                    <li class=" ">
+                    <a href="bookings.php">
+                        <span class="pcoded-mtext">All Bookings</span>
+                    </a>
+                </li>
+                    
+                </ul>
             </li>
 
-           
-            <li class=" ">
-                <a href="bookings.php">
-                    <span class="pcoded-micon"><i class="feather icon-feather"></i></span>
-                    <span class="pcoded-mtext">All Bookings</span>
-                </a>
-            </li>
+
+            
 
             <li class=" ">
                 <a href="ptest.php">
