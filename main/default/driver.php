@@ -477,6 +477,14 @@ function sidebar()
                 </ul>
             </li>
 
+
+            <li class=" ">
+                <a href="newbookings.php">
+                    <span class="pcoded-micon"><i class="feather icon-feather"></i></span>
+                    <span class="pcoded-mtext">New Bookings</span>
+                </a>
+            </li>
+
            
             <li class=" ">
                 <a href="bookings.php">
