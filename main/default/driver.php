@@ -420,7 +420,7 @@ function sidebar()
                     </li>
                     <li class=" ">
                         <a href="view-counsellors.php">
-                            <span class="pcoded-mtext">View Counsellors</span>
+                            <span class="pcoded-mtext">View All Counsellors</span>
                         </a>
                     </li>
 
