@@ -20,7 +20,7 @@ function tbar()
                 <i class="feather icon-menu"></i>
             </a>
             <a href="index.php">
-                <img class="img-fluid" src="files/assets/images/logo.png" alt="Theme-Logo" />
+                <img class="img-fluid" src="files/assets/images/logo.jpg" alt="Theme-Logo" />
             </a>
             <a class="mobile-options">
                 <i class="feather icon-more-horizontal"></i>
@@ -789,13 +789,13 @@ function availablecounsellors()
     }
 }
 
-
-function countclients($id){
+function countclients($id)
+{
     include 'db.php';
-    $c = mysqli_query($conn,"SELECT * FROM bookings WHERE cid ='$id' AND status= 'approved'");
+    $c = mysqli_query($conn, "SELECT * FROM bookings WHERE cid ='$id' AND status= 'approved'");
     $cc = mysqli_num_rows($c);
-    return $cc;
 
+    return $cc;
 }
 
 function allbookings()
