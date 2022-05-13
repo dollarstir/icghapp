@@ -996,7 +996,7 @@ function pendingbk()
 function totalcounsellors()
 {
     include 'db.php';
-    $a = mysqli_query($conn, 'SELECT * FROM counsellors');
+    $a = mysqli_query($conn, 'SELECT * FROM counsellors WHERE status = "available"');
     $aa = mysqli_num_rows($a);
     echo $aa;
 }
