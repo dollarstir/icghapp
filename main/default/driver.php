@@ -783,6 +783,15 @@ function availablecounsellors()
     }
 }
 
+
+function countclients($id){
+    include 'db.php';
+    $c = mysqli_query($conn,"SELECT * FROM bookings WHERE cid ='$id' AND status= 'approved'");
+    $cc = mysqli_num_rows($c);
+    return $cc;
+
+}
+
 function allbookings()
 {
     include 'db.php';
