@@ -730,6 +730,39 @@ function allbookings()
     }
 }
 
+function newbookings()
+{
+    include 'db.php';
+
+    $ad = mysqli_query($conn, 'SELECT * FROM bookings WHERE status= "pending"');
+    while ($ra = mysqli_fetch_array($ad)) {
+        $uid = $ra['userid'];
+
+        $u = mysqli_query($conn, "SELECT * FROM utable WHERE id='$uid'");
+        $ru = mysqli_fetch_array($u);
+        echo '<tr>
+        <td>'.$ru['name'].'</td>
+        <td>'.$ra['userlocation'].'</td>
+        <td>'.$ra['cname'].'</td>
+        <td><img src="upload/'.$ra['cpic'].'" style="width="70px" height="70px"/></td>
+        <td>'.$ra['ctype'].'</td>
+        <td>'.$ra['clocation'].'</td>
+        <td>'.$ra['ccontact'].'</td>
+        <td>'.$ra['appdate'].'</td>
+        <td>'.$ra['apptime'].'</td>
+        <td>'.$ra['status'].'</td>';
+
+        if ($ra['status'] == 'pending' && $ra['cid'] == 'notyet') {
+            echo '<td><a class="btn btn-primary" href="assign.php?id='.$ra['id'].'&ctype='.$ra['ctype'].'">Assign Counsellor</a></td>';
+        } elseif ($ra['status'] == 'pending' && $ra['cid'] != 'notyet') {
+            echo '<td><a class="btn btn-primary" href="approve.php?id='.$ra['id'].'">Approve</a></td>';
+        } else {
+            echo '<td></td>';
+        }
+        echo' </tr>';
+    }
+}
+
 function assigncounsellor($cid, $bid, $ctype)
 {
     include 'db.php';
