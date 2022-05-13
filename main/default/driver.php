@@ -20,7 +20,7 @@ function tbar()
                 <i class="feather icon-menu"></i>
             </a>
             <a href="index.php">
-                <img class="img-fluid" src="files/assets/images/logo1.png" alt="Theme-Logo" />
+                <img class="img-fluid" src="files/assets/images/mlogo.png" alt="Theme-Logo" />
             </a>
             <a class="mobile-options">
                 <i class="feather icon-more-horizontal"></i>
