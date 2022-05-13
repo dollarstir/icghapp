@@ -718,6 +718,7 @@ function counsellors()
         <td>'.$ra['name'].'</td>
         <td>'.$ra['email'].'</td>
         <td>'.$ra['contact'].'</td>
+        <td>'.$ra['gpcpin'].'</td>
         <td>'.$ra['region'].'</td>
         <td>'.$ra['type'].'</td>
          <td>'.$ra['cgroup'].'</td>
@@ -742,6 +743,7 @@ function pendingcounsellors()
         <td>'.$ra['name'].'</td>
         <td>'.$ra['email'].'</td>
         <td>'.$ra['contact'].'</td>
+        <td>'.$ra['gpcpin'].'</td>
         <td>'.$ra['region'].'</td>
         <td>'.$ra['type'].'</td>
          <td>'.$ra['cgroup'].'</td>
@@ -766,6 +768,7 @@ function availablecounsellors()
         <td>'.$ra['name'].'</td>
         <td>'.$ra['email'].'</td>
         <td>'.$ra['contact'].'</td>
+        <td>'.$ra['gpcpin'].'</td>
         <td>'.$ra['region'].'</td>
         <td>'.$ra['type'].'</td>
          <td>'.$ra['cgroup'].'</td>

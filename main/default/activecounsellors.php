@@ -277,6 +277,7 @@ include 'driver.php';
                                                                         <th>Name</th>
                                                                         <th>Email</th>
                                                                         <th>Contact</th>
+                                                                        <th>GPC PIN</th>
                                                                         <th>Region</th>
                                                                         <th>Type</th>
                                                                         <th>Picture</th>
@@ -293,6 +294,7 @@ include 'driver.php';
                                                                         <th>Name</th>
                                                                         <th>Email</th>
                                                                         <th>Contact</th>
+                                                                        <th>GPC PIN</th>
                                                                         <th>Region</th>
                                                                         <th>Type</th>
                                                                          <th>Group</th>

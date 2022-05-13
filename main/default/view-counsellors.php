@@ -1,15 +1,12 @@
-<?php 
+<?php
 session_start();
 
-if(isset($_SESSION['loggedin'] ) && $_SESSION['loggedin'] == true){
-   
-}
-else{
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+} else {
     echo '<script> window.location="auth.php"</script>';
 }
 
 include 'driver.php';
-
 
 ?>
 
@@ -101,7 +98,7 @@ include 'driver.php';
         <div class="pcoded-container navbar-wrapper">
 
             <!-- tbar -->
-            <?php tbar();?>
+            <?php tbar(); ?>
             <!-- tbar -->
 
             <!-- Sidebar chat start -->
@@ -239,31 +236,7 @@ include 'driver.php';
                                     <!-- Page-header start -->
                                     <div class="page-header">
                                         <div class="row align-items-end">
-                                            <!-- <div class="col-lg-8">
-                                                <div class="page-header-title">
-                                                    <div class="d-inline">
-                                                        <h4>HTML 5 Data Export</h4>
-                                                        <span>HTML5 buttons provides the local file saving
-                                                            features</span>
-                                                    </div>
-                                                </div>
-                                            </div> -->
-                                            <!-- <div class="col-lg-4">
-                                                <div class="page-header-breadcrumb">
-                                                    <ul class="breadcrumb-title">
-                                                        <li class="breadcrumb-item"  style="float: left;">
-                                                            <a href="index.html"> <i class="feather icon-home"></i> </a>
-                                                        </li>
-                                                        <li class="breadcrumb-item"  style="float: left;"><a href="dt-ext-buttons-html-5-data-export.html#!">Data Table
-                                                                Extensions</a>
-                                                        </li>
-                                                        <li class="breadcrumb-item"  style="float: left;"><a href="dt-ext-buttons-html-5-data-export.html#!">Button</a>
-                                                        </li>
-                                                        <li class="breadcrumb-item"  style="float: left;"><a href="dt-ext-buttons-html-5-data-export.html#!">HTML5 Data-Export</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div> -->
+                                            
                                         </div>
                                     </div>
                                     <!-- Page-header end -->
@@ -286,6 +259,7 @@ include 'driver.php';
                                                                         <th>Name</th>
                                                                         <th>Email</th>
                                                                         <th>Contact</th>
+                                                                        <th>GPC PIN</th>
                                                                         <th>Region</th>
                                                                         <th>Type</th>
                                                                         <th>Picture</th>
@@ -294,7 +268,7 @@ include 'driver.php';
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
-                                                                    <?php counsellors();?>   
+                                                                    <?php counsellors(); ?>   
                                                                     
                                                                 </tbody>
                                                                 <tfoot>
@@ -302,6 +276,7 @@ include 'driver.php';
                                                                         <th>Name</th>
                                                                         <th>Email</th>
                                                                         <th>Contact</th>
+                                                                        <th>GPC PIN</th>
                                                                         <th>Region</th>
                                                                         <th>Type</th>
                                                                          <th>Group</th>
