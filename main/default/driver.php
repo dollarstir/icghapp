@@ -407,6 +407,17 @@ function sidebar()
                             <span class="pcoded-mtext">Add Counsellor</span>
                         </a>
                     </li>
+
+                    <li class=" ">
+                        <a href="pendingcounsellors.php">
+                            <span class="pcoded-mtext">Pending Counsellors</span>
+                        </a>
+                    </li>
+                    <li class=" ">
+                        <a href="activecounsellors.php">
+                            <span class="pcoded-mtext">Active Counsellors</span>
+                        </a>
+                    </li>
                     <li class=" ">
                         <a href="view-counsellors.php">
                             <span class="pcoded-mtext">View Counsellors</span>
@@ -726,6 +737,30 @@ function pendingcounsellors()
     include 'db.php';
 
     $ad = mysqli_query($conn, 'SELECT * FROM counsellors WHERE status ="pending"');
+    while ($ra = mysqli_fetch_array($ad)) {
+        echo '<tr>
+        <td>'.$ra['name'].'</td>
+        <td>'.$ra['email'].'</td>
+        <td>'.$ra['contact'].'</td>
+        <td>'.$ra['region'].'</td>
+        <td>'.$ra['type'].'</td>
+         <td>'.$ra['cgroup'].'</td>
+        <td><img src="upload/'.$ra['pic'].'" style="width="70px" height="70px"/></td>';
+        if ($ra['status'] == 'pending') {
+            echo '<td><a class="btn btn-primary" href="aprovecounsellor.php?id='.$ra['id'].'">Approve</a> | <a class="btn btn-danger" href="delcounsellor.php?id='.$ra['id'].'">Delete</a></td> ';
+        } else {
+            echo '<td><a class="btn btn-danger" href="delcounsellor.php?id='.$ra['id'].'">Delete</a></td> ';
+        }
+
+        echo ' </tr>';
+    }
+}
+
+function availablecounsellors()
+{
+    include 'db.php';
+
+    $ad = mysqli_query($conn, 'SELECT * FROM counsellors WHERE status ="available"');
     while ($ra = mysqli_fetch_array($ad)) {
         echo '<tr>
         <td>'.$ra['name'].'</td>

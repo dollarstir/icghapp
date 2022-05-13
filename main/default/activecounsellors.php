@@ -285,7 +285,7 @@ include 'driver.php';
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
-                                                                    <?php pendingcounsellors(); ?>   
+                                                                    <?php availablecounsellors(); ?>   
                                                                     
                                                                 </tbody>
                                                                 <tfoot>
