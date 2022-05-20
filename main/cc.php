@@ -2,7 +2,7 @@
 <?php
   include 'fragement/adapter.php';
   include 'fragement/send.php';
-        $sql = "SELECT * FROM counsellors WHERE status ='available' ORDER BY rand() LIMIT 20";
+        $sql = "SELECT * FROM counsellors WHERE status ='available' ORDER BY rand(id)";
 
     $result = $conn->query($sql);
 
