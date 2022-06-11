@@ -289,7 +289,7 @@ include 'driver.php';
                                                                                 <i class="icofont icofont-news"></i>
                                                                             </label>
                                                                             <input type="text" id="phone"
-                                                                                name="title" placeholder="title">
+                                                                                name="title" placeholder="Link to Ads if any">
                                                                         </div>
                                                                     </div>
                                                                     <!-- end subject -->
